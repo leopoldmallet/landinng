@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+
+<html> 
+
+  <head>
+  	<title>Orga Content</title>
+  	<link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+    <body>
+
+    	<div class="banner">
+    		<div class="container">
+    			<h1>Discover Organic content</h1>
+    			<h2>Let's learn how to become viral.</h2>
+    			<a href="#apply-section" class="btn-blue">Star now</a>
+
+    </div> 
+
+
+    	<div class="container">
+    	
+
+
+
+    <h2> Our compagny </h2>
+<div class="cards">
+
+    <div class="card">
+    	
+    	<img src="images/screen.png">
+    	<h3>Our services</h3>
+
+
+
+    </div> 
+    <div class="card">
+    	
+    	<img src="images/marques.png">
+    	<h3>Our clients</h3>
+
+    </div> 
+
+      <div> 
+    <div class="card">
+    	
+    	<img src="images/projet.png">
+    	<h3>Our projet</h3>
+
+    </div> 
+</div>
+
+
+        
+
+<div id="apply-section"> 
+        </div>
+        <div class="multi-question-section" style="background: #FFFFFF; max-width: 640px; margin: 0 auto; padding: 20px; text-align: center; border: 1px solid #ccc; border-radius: 8px;">
+    <h2 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; font-size: 22px; line-height: 32px; color: #3D3D3D;">
+        We have a few questions for you!
+    </h2>
+
+    <form id="question-form" style="margin-top: 20px;">
+        <div id="question-container">
+            <div class="question" data-question="1" style="display: block;">
+                <label for="question1" style="display: block; font-size: 16px; color: #333;">What's your name?</label>
+                <input type="text" id="question1" name="name" required style="padding: 10px; font-size: 18px; border: 1px solid #ccc; border-radius: 4px; width: 80%; max-width: 300px;">
+                <button type="button" class="next-button" style="display: inline-block; background: #4FB0AE; color: #FFFFFF; font-family: system-ui; font-size: 20px; font-weight: 700; line-height: 28px; margin: 10px 0; text-decoration: none; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Next</button>
+            </div>
+            <div class="question" data-question="2" style="display: none;">
+                <label for="question2" style="display: block; font-size: 16px; color: #333;">What's your email?</label>
+                <input type="email" id="question2" name="email" required style="padding: 10px; font-size: 18px; border: 1px solid #ccc; border-radius: 4px; width: 80%; max-width: 300px;">
+                <button type="button" class="next-button" style="display: inline-block; background: #4FB0AE; color: #FFFFFF; font-family: system-ui; font-size: 20px; font-weight: 700; line-height: 28px; margin: 10px 0; text-decoration: none; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Next</button>
+            </div>
+            <div class="question" data-question="3" style="display: none;">
+                <label for="question3" style="display: block; font-size: 16px; color: #333;">What's your phone number?</label>
+                <input type="tel" id="question3" name="phone" placeholder="+1 (201) 555-0123" required style="padding: 10px; font-size: 18px; border: 1px solid #ccc; border-radius: 4px; width: 80%; max-width: 300px;">
+                <button type="submit" style="display: inline-block; background: #4FB0AE; color: #FFFFFF; font-family: system-ui; font-size: 20px; font-weight: 700; line-height: 28px; margin: 10px 0; text-decoration: none; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Submit</button>
+            </div>
+        </div>
+    </form>
+    <p style="font-family: Helvetica, Arial; font-size: 12px; line-height: 1; color: #3D3D3D; margin-top: 20px;">
+        Powered by <a href="https://www.typeform.com" style="color: #3D3D3D; text-decoration: none; font-weight: bold;">Typeform</a>
+    </p>
+</div>
+
+<script>
+    const nextButtons = document.querySelectorAll('.next-button');
+    const questions = document.querySelectorAll('.question');
+    let currentQuestion = 0;
+
+    nextButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Hide current question
+            questions[currentQuestion].style.display = 'none';
+            currentQuestion++;
+            // Show next question if available
+            if (currentQuestion < questions.length) {
+                questions[currentQuestion].style.display = 'block';
+            }
+        });
+    });
+
+    document.getElementById('question-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = this.name.value;
+        const email = this.email.value;
+        const phoneNumber = this.phone.value;
+        // Handle the form data here, e.g., send to your server
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Phone number:', phoneNumber);
+        alert('Thank you for your responses!');
+    });
+</script>
+</div>
+
+
+    </body>
+
+  </html>
